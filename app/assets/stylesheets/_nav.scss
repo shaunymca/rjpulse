@@ -1,5 +1,5 @@
 header {
-	height: 50px;
+	height: 40px;
 }
 
 .navbar {
@@ -11,7 +11,15 @@ header {
 			color: #f2f0f0;
 
 			&.navbar-brand {
-				font-size: 0.75em;
+				font-size: 0.8em;
+			}
+		}
+	}
+
+	.navbar-nav {
+		li {
+			a {
+				font-size: 0.8em;
 			}
 		}
 	}
