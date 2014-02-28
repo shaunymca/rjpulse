@@ -1,0 +1,4 @@
+hey!
+
+<h1><%= @survey.name %></h1>
+

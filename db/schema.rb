@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140228023024) do
     t.integer  "survey_id"
     t.string   "question_s"
     t.text     "question_t"
-    t.string   "answer_type_id"
+    t.integer  "answer_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

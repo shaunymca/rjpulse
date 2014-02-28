@@ -28,6 +28,8 @@ h4 {
 	text-transform: uppercase;
 	letter-spacing: 10px;
 	font-weight: 500;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
 }
 
 h7 {
@@ -61,6 +63,14 @@ a {
 	&:visited {
 		color: inherit;
 	}
+}
+
+.dotted {
+	border-width: 0 0 1px 0;
+	border-image: url(http://rjmetrics.com/wp-content/themes/rjmetrics_new/images/dark_dots.svg) 0 0 1 0 repeat;
+	-moz-border-image: url(http://rjmetrics.com/wp-content/themes/rjmetrics_new/images/dark_dots.svg) 0 0 1 0 repeat;
+	display: inline-block;
+	padding-top: 10px;
 }
 
 label {

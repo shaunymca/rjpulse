@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :survey_id
       t.string :question_s
       t.text :question_t
-      t.string :answer_type
+      t.integer :answer_type
 
       t.timestamps
     end
