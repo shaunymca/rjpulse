@@ -1,26 +1,40 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <h3>Log in</h3>
-    <%= devise_error_messages! %>
-    <div class="form-group">
-      <%- if devise_mapping.registerable? %>
-        <%= link_to 'Sign up', new_registration_path(resource_name), class: 'right'  %>
-      <% end -%>
-      <%= f.label :email %>
-      <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%- if devise_mapping.recoverable? %>
-        <%= link_to "Forgot password?", new_password_path(resource_name), class: 'right' %>
-      <% end -%>
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-      <%= f.submit 'Log in', :class => 'button right' %>
-      <% if devise_mapping.rememberable? -%>
-        <div class="checkbox">
-          <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+
+    <div class="intro">
+      <div class="row">
+        <div class="col-md-7">
+          <h1 class="dotted">How Data Smart is Your Company?</h1>
+          <p class="descrip">Ecommerce is a cutthroat world filled with enormous opportunity and razor thin margins. It’s a world where only the data smart survive.</p>
+          <hr/>
+          <h3>Log in to view past results</h3>
+
         </div>
-      <% end -%>
-  <% end %>
-</div>
+        <div class="col-md-5">
+          <div class="authform">
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
+              <%= devise_error_messages! %>
+              <div class="form-group">
+                <%= f.email_field :email, :autofocus => true, :placeholder => 'Email', class: 'form-control' %>
+              </div>
+              <div class="form-group">
+                <%= f.password_field :password, :placeholder => 'Password', class: 'form-control' %>
+                <%- if devise_mapping.recoverable? %>
+                  <%= link_to "Forget password?", new_password_path(resource_name), class: 'right' %>
+                <% end -%>
+              </div>
+                <% if devise_mapping.rememberable? -%>
+                  <div class="checkbox">
+                    <%= f.check_box :remember_me %> <%= f.label :remember_me, class: 'remember_me' %>
+                  </div>
+                <% end -%>
+
+              <div class="login_links">
+                <%= f.submit 'View results', :class => 'btn btn-green' %>
+                <%- if devise_mapping.registerable? %>
+                  <%= link_to 'Home', new_registration_path(resource_name), class: 'new_link'  %>
+                <% end -%>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>

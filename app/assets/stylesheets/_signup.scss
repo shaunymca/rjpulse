@@ -1,0 +1,66 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	background: #f5f4f4;
+}
+
+.container {
+	position: relative;
+}
+
+.descrip {
+	width: 75%;
+}
+
+.dino {
+	position: absolute;
+	left: 5%;
+	bottom: 0;
+	max-width: 15%;
+}
+
+.footer {
+	height: 65px;
+	width: 100%;
+	background: #f37621;
+	padding: 20px 0;
+	font-size: 0.65em;
+	color: #fff;
+	font-weight: 100;
+	position: absolute;
+	bottom: 0;
+}
+
+.footer a {
+	display: inline-block;
+	padding-top: 5px;
+}
+
+.footer .address a {
+	padding-top: 0;
+}
+
+.logo {
+	display: inline;
+	margin: -5px 30px -5px 10px;
+}
+
+nav {
+	&:after {
+		clear: both;
+	}
+}
+
+
+.wrapper {
+	margin: 50px auto;
+	max-width: 1560px;
+	min-height: 100%;
+	margin-bottom: -50px;
+	height: auto;
+	padding: 0 0 50px;
+	position: relative;
+	overflow: hidden;
+}

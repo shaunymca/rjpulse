@@ -1,0 +1,17 @@
+
+<%= simple_nested_form_for(@survey) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :img_location %>
+    <%= f.fields_for :questions %>
+    <%= f.link_to_add "Add a question", :questions, :class => 'btn btn-success' %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,3 @@
+<%= f.input :question_s %>
+<%= f.association :answer_type, collection: AnswerType.all(order: 'value'), label_method: :value %>
+<%= f.input :question_options_input %>

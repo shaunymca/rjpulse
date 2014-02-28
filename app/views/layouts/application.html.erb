@@ -7,14 +7,41 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <!-- Async TypeKit Code-->
+  <script type="text/javascript">
+    (function() {
+      var config = {
+        kitId: 'aik2kna',
+        scriptTimeout: 3000
+      };
+      var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+    })();
+  </script>
   </head>
   <body>
+      <% if user_signed_in? %>
+        <% if current_user.has_role? :admin %>
     <header>
-      <%= render 'layouts/navigation' %>
+        <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
+      <% end %>
+    <% end %>
+    
+    <div role="main">
        <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+       <div class="container">
+        <div class="wrapper">
+            <%= yield %>
+          </div>
+        </div>
+    </div>
+
+    <div class="footer">
+      <img src="/assets/dinosaur.svg" class="dino"/>
+      <div class="text-right">
+        Powered by <img src="/assets/rjm-logo-sm.svg" class="logo"/>
+      </div>
+    </div>
+
   </body>
 </html>

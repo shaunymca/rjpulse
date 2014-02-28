@@ -1,0 +1,33 @@
+.table-condensed {
+
+	&.table-users {
+		&> thead {
+			&> tr {
+
+				&> th {
+					font-weight: 300;
+					border-bottom: 1px dashed #d2d0d0;
+					padding: 10px;
+				}
+			}
+		}
+
+		&> tbody {
+			&> tr {
+				&:nth-child(odd) {
+					background: #f2f0f0;
+					border-radius: 5px;
+				}
+
+				&> td {
+					padding: 10px 10px;
+					font-size: 0.8em;
+					line-height: 2em;
+					border: none;
+					color: #444;
+				}
+
+			}
+		}
+	}
+}
