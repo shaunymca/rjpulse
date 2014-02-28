@@ -1,13 +1,12 @@
 <h1 class="text-center survey-title"><%= @survey.name %></h1>
-<p class="small"><%= @survey.description %></p>
 
 
 <%= simple_nested_form_for @survey do |s| %>
     <%= s.fields_for :questions do |f| %>
-    <%= f.label :question_s %>
+    <div class="question_ask"><%= f.object.question_s %></div>
         <% if f.object.answer_type_value == "text" %>
             <%= f.fields_for :answers do |a| %>
-                <%= a.hidden_field :user_id, :value => current_user.id %>
+                <%= a.hidden_field :user_id, :value => current_user.id, inline_label: '' %>
                 <%= a.input :value_t, as: :text %>
             <% end %>
         <% elsif f.object.answer_type_value == "dropdown" %>
@@ -17,11 +16,17 @@
             <% end %>
         <% elsif f.object.answer_type_value == "radio buttons" %>
             <%= f.fields_for :answers do |a| %>
-                <%= a.hidden_field :user_id, :value => current_user.id %>
-                <%= a.association :answer_option, collection: a.object.question.answer_options.all, label_method: :value, as: :radio_buttons %>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <%= a.hidden_field :user_id, :value => current_user.id %>
+                    <%= a.association :answer_option, collection: a.object.question.answer_options.all, label_method: :value, as: :radio_buttons, :type => 'radio' %>
+                </span>
+            </div>
             <% end %>
         <% end %>
 
     <% end %>
-    <%= s.button :submit, class: 'btn-success' %>
+    <div class="text-center">
+        <%= s.button :submit, class: 'btn btn-green text-center survey-submit' %>
+    </div>
 <% end %>

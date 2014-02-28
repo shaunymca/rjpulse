@@ -22,6 +22,10 @@ class Question < ActiveRecord::Base
       self.answer_type.value
     end
 
+    def user_count
+      self.answers.map(&:user_id).uniq.count
+    end
+
 
 
     def question_options_input

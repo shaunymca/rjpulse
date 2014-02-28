@@ -1,9 +1,74 @@
 .survey-contain {
 	max-width: 760px;
-	width: 70%;
+	width: 60%;
 	margin: 0 auto;
 
 	.survey-title {
 		text-transform: capitalize;
 	}
+
+	.control-label {
+		font-weight: 600;
+		display: none;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	input.text {
+		width: 100%;
+		height: 35px;
+		border: 1px solid #d2d0d0;
+		border-radius: 5px;
+		padding: 10px;
+		font-size: 0.8em;
+		color: #828282;
+	}
+
+	textarea {
+		@extend input.text;
+		height: 70px;
+	}
+
+	.fields {
+		margin-bottom: 30px;
+	}
+
+	.question_ask {
+		margin-bottom: 15px;
+	}
+
+	.input-group {
+		.input-group-addon {
+			border-radius: 10px;
+			border: none;
+		}
+
+		label {
+			font-weight: 300;
+			font-size: 1.2em;
+			line-height: 1em;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			margin: 0;
+			border-bottom: 1px solid #d2d0d0;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			.radio {
+				border: 0px;
+				height: 2em;
+				width: 2em;
+			}
+		}
+	}
+
+	select {
+		width: 100%;
+		font-size: 1em;
+	}
+
 }

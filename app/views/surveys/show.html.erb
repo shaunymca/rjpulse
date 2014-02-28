@@ -1,9 +1,14 @@
-<%= render 'survey_incomplete' %>
+<div class="back">
+	<%= link_to 'Edit', edit_survey_path(@survey) %>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<%= link_to 'Back', surveys_path %>
+</div>
+<% if @survey.answers.map(&:user_id).include?(current_user.id) %>
+<%= render 'survey_results' %>
+<% else %>
+
 <div class="survey-contain">
 	<%= render 'user_survey' %>
 	<p class="small" id="notice"><%= notice %></p>
 </div>
+<% end %>
 
-
-<%= link_to 'Edit', edit_survey_path(@survey) %> |
-<%= link_to 'Back', surveys_path %>
