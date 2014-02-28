@@ -3,9 +3,12 @@ Myapp::Application.routes.draw do
 
   resources :answer_types
 
-  resources :answers
 
-  resources :questions
+  resources :questions do
+    resources :answers
+  end
+  
+  resources :answers
 
   resources :surveys
 

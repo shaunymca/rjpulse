@@ -3,6 +3,7 @@ class Question < ActiveRecord::Base
     belongs_to :answer_type
     has_many :answers
     has_many :answer_options, :dependent => :destroy
+    accepts_nested_attributes_for :answers
 
     accepts_nested_attributes_for :answer_options
 

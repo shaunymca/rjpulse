@@ -2,10 +2,74 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Myapp" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Myapp" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "RJM Pulse" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "RJM Pulse" %>">
+    <link rel="shortcut icon" href="http://rjmetrics.com/ui/img/rjm-favicon.png" />
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "jquery-1.4.2.min", "highcharts" %>
+    <script type="text/javascript" charset="utf-8">
+      $(function () {
+        $('#orders_chart').highcharts({
+            chart: {
+                type: 'bar',
+                backgroundColor: 'transparent'
+            },
+            title: {
+              text: null
+            },
+            xAxis: {
+                title: {
+                    text: null
+                },
+                labels: {
+                  enabled: false
+                },
+                lineWidth: 0,
+                tickWidth: 0
+            },
+            yAxis: {
+                min: 0,
+                max: 1,
+                title: {
+                    text: null
+                },
+                labels: {
+                  enabled: false
+                },
+                gridLineWidth: 0
+            },
+            legend: {
+                backgroundColor: 'none',
+                reversed: true,
+                borderWidth: 0
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'normal'
+                }
+            },
+                series: [{
+                name: 'Always',
+                data: [0.25]
+            }, {
+                name: 'Frequently',
+                data: [0.25]
+            }, {
+                name: 'Frequently',
+                data: [0.15]
+            },{
+                name: 'Frequently',
+                data: [0.1]
+            }, {
+                name: 'Sometimes',
+                data: [0.25]
+            }]
+        });
+    });
+    
+
+    </script>
     <%= csrf_meta_tags %>
     <!-- Async TypeKit Code-->
   <script type="text/javascript">

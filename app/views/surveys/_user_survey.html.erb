@@ -1,6 +1,27 @@
 <h1><%= @survey.name %></h1>
 <p><%= @survey.description %></p>
 
-<% @survey.questions.each do |question| %> 
-<%= render partial: 'survey_question' , locals: {question: question} %>
+
+<%= simple_nested_form_for @survey do |s| %>
+    <%= s.fields_for :questions do |f| %>
+    <%= f.label :question_s %>
+        <% if f.object.answer_type_value == "text" %>
+            <%= f.fields_for :answers do |a| %>
+                <%= a.hidden_field :user_id, :value => current_user.id %>
+                <%= a.input :value_t, as: :text %>
+            <% end %>
+        <% elsif f.object.answer_type_value == "dropdown" %>
+            <%= f.fields_for :answers do |a| %>
+                <%= a.hidden_field :user_id, :value => current_user.id %>
+                <%= a.input :answer_option_id, collection: AnswerOption.all.map(&:value) %>
+            <% end %>
+        <% elsif f.object.answer_type_value == "radio buttons" %>
+            <%= f.fields_for :answers do |a| %>
+                <%= a.hidden_field :user_id, :value => current_user.id %>
+                <%= a.input :answer_option_id, collection: AnswerOption.all.map(&:value), as: :radio_buttons %>
+            <% end %>
+        <% end %>
+
+    <% end %>
+    <%= s.button :submit, class: 'btn-success' %>
 <% end %>

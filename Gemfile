@@ -15,6 +15,7 @@ gem 'rolify'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
+gem "highcharts-rails", "~> 3.0.0"
 gem "nested_form", :git => 'https://github.com/ryanb/nested_form.git'
 group :development do
   gem 'sqlite3'
