@@ -1,26 +1,8 @@
 <%= render 'survey_incomplete' %>
-<%= render 'user_survey' %>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @survey.user_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @survey.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @survey.description %>
-</p>
-
-<p>
-  <strong>Img location:</strong>
-  <%= @survey.img_location %>
-</p>
+<div class="survey-contain">
+	<%= render 'user_survey' %>
+	<p class="small" id="notice"><%= notice %></p>
+</div>
 
 
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
