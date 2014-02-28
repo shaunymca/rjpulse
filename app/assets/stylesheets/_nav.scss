@@ -5,5 +5,14 @@ header {
 .navbar {
 	background: #d2d0d0;
 	border: none;
-	color: #828282;
+	color: #f2f0f0;
+	&> li {
+		&> a {
+			color: #f2f0f0;
+
+			&.navbar-brand {
+				font-size: 0.75em;
+			}
+		}
+	}
 }
