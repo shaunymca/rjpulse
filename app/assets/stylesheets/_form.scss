@@ -18,6 +18,10 @@
 	}
 }
 
+.back {
+	font-size: 0.8em;
+}
+
 .btn {
 	text-transform: uppercase;
 	color: #fff;
@@ -132,4 +136,55 @@ label {
 	width: 80%;
 	margin: 50px auto 0;
 	text-align: center;
+}
+
+.simple_form {
+	.form_details {
+		input {
+			width: 90%;
+			height: 35px;
+			border: 1px solid #d2d0d0;
+			border-radius: 5px;
+			padding: 10px;
+			font-size: 0.8em;
+			color: #828282;
+		}
+
+		textarea {
+			@extend input;
+			height: 80px;
+		}
+	}
+
+	.questions {
+		.fields {
+			position: relative;
+			padding: 30px 0;
+			border-top: 1px solid #d2d0d0;
+
+			&:first-child {
+				padding-top: 0;
+				border-top: 0;
+			}
+
+			.controls {
+				input {
+					width: 70%;
+					height: 35px;
+					border-radius: 5px;
+					border: 1px solid #d2d0d0;
+					margin-bottom: 15px;
+					padding: 10px;
+					font-size: 0.85em;
+					color: #828282;
+
+				}
+				select {
+					margin-bottom: 15px;
+					width: 45%;
+				}
+			}
+		}
+	}
+
 }

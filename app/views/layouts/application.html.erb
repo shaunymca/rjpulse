@@ -35,6 +35,8 @@
           </div>
         </div>
     </div>
+    <% if user_signed_in? %>
+    <% else %>
 
     <div class="footer">
       <%= image_tag("dinosaur.svg", class:"dino") %>
@@ -42,6 +44,6 @@
         Powered by <%= image_tag("rjm-logo-sm.svg", class:"logo") %>
       </div>
     </div>
-
+    <% end %>
   </body>
 </html>

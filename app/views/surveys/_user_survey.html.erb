@@ -1,0 +1,6 @@
+<h1><%= @survey.name %></h1>
+<p><%= @survey.description %></p>
+
+<% @survey.questions.each do |question| %> 
+<%= render 'survey_question' , locals: {question: @question} %>
+<% end %>

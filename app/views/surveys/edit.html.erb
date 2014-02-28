@@ -1,8 +1,8 @@
-<h4>Edit Survey</h4>
-
-<div class="dotted"></div>
+<div class="back">
+	<%= link_to 'Show', @survey %>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<%= link_to 'Back', surveys_path %>
+</div>
+<h4 class="dotted">Edit survey</h4>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @survey %> |
-<%= link_to 'Back', surveys_path %>

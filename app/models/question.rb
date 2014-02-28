@@ -24,10 +24,12 @@ class Question < ActiveRecord::Base
 
   def question_options_input=(answers)
       split = answers.split(', ')
+      logger.debug split
       split.each do |option|
-        unless self.answer_options.map(&:value).include?(option)
+
+
         self.answer_options.build(:question_id => id, :value => option)
-    end
+      
     end
   end
 end

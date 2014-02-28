@@ -9,15 +9,15 @@
     <div class="col-md-12">
       <div class="form-inputs">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4 form_details">
             <%= f.hidden_field :user_id, :value => current_user.id %>
             <%= f.input :name %>
             <%= f.input :description %>
             <%= f.input :img_location %>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 questions">
             <%= f.fields_for :questions %>
-            <%= f.link_to_add "Add a question", :questions, :class => 'btn btn-green btn-small' %>
+            <%= f.link_to_add "Add a question", :questions, :class => 'btn btn-green btn-small pull-right', :id => 'add_question' %>
           </div>
       </div>
     </div>
