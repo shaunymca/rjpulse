@@ -17,6 +17,11 @@ class Question < ActiveRecord::Base
         end
     end
 
+    def answer_type_value
+      self.answer_type.value
+    end
+
+
 
     def question_options_input
       answer_options.map(&:value).join(', ')
