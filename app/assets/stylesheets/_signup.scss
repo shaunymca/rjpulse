@@ -11,6 +11,33 @@ html, body {
 	z-index: 100000;
 }
 
+.beta {
+	background: #1ABC9C;
+	position: relative;
+	width: 115px;
+	color: #fff;
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: 0.8em;
+	letter-spacing: 5px;
+	padding: 2px;
+	margin: 5px;
+	text-align: center;
+	border-radius: 3px;
+
+	&:after {
+		content: ' ';
+		display: block;
+		position: absolute;
+		left: -3px;
+		top: -3px;
+		right: -3px;
+		bottom: -3px;
+		border: 2px solid #1abc9c;
+		border-radius: 5px;
+	}
+}
+
 body {
 	background: #f5f4f4;
 }

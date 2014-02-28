@@ -12,7 +12,13 @@ Myapp::Application.routes.draw do
 
   resources :surveys
 
-  root :to => "home#index"
+  authenticated :user do
+    root :to => 'surveys#index'
+  end
+  devise_scope :user do
+    get "/" => "devise/registrations#new"
+  end
+
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
 end
