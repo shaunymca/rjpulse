@@ -2,5 +2,5 @@
 <p><%= @survey.description %></p>
 
 <% @survey.questions.each do |question| %> 
-<%= render 'survey_question' , locals: {question: @question} %>
+<%= render partial: 'survey_question' , locals: {question: question} %>
 <% end %>
