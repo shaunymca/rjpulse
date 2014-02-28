@@ -18,8 +18,44 @@ header {
 
 	.navbar-nav {
 		li {
+
+			&.open {
+				a {
+					background: #f6914f;
+				}
+			}
+
 			a {
 				font-size: 0.8em;
+				&.dropdown-toggle {
+					color: #f2f0f0 !important;
+
+				}
+
+				&:visited {
+					color: #f2f0f0 !important;
+				}
+
+				&:hover {
+					background: #f6914f;
+				}
+
+				&:active {
+					background: #f6914f;
+				}
+			}
+		}
+
+		.dropdown-menu {
+			background: #f6914f;
+			border: none;
+			border-radius: 0;
+
+			li {
+				font-size: 1em;
+				a {
+					font-size: 1em;
+				}
 			}
 		}
 	}
