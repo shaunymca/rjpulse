@@ -3,7 +3,7 @@ class CreateAnswers < ActiveRecord::Migration
     create_table :answers do |t|
       t.integer :user_id
       t.integer :question_id
-      t.string :value_s
+      t.integer :answer_option_id
       t.text :value_t
 
       t.timestamps
